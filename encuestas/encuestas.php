@@ -53,7 +53,7 @@ try {
                         </div>
                     </fieldset>
                 </form>
-                <?php if (@$_GET['error'] == true): ?>
+                <?php if (isset($_GET['error'])): ?>
                 <div class="card error">
                     <p><span class="icon-alert"></span>
                         <?php print($_GET['error']) ?>
@@ -73,7 +73,7 @@ try {
                         </div>
                     </fieldset>
                 </form>
-                <?php if (@$_GET['error'] == true): ?>
+                <?php if (isset($_GET['error'])): ?>
                 <div class="card warning">
                     <p><span class="icon-alert"></span>
                         <?php print($_GET['error']) ?>
@@ -100,7 +100,8 @@ if (isset($_POST['atras'])) {
         $resultado->bindValue(":asig", $asig);
         $resultado->execute();
         if ($resultado->rowCount() != 0) {
-            header("location:encuesta.php");
+            $_SESSION['imparte'] = $resultado->fetchAll(\PDO::FETCH_NUM)[0][0];
+            header("location:encuestar.php");
         } else {
             header("location:encuestas.php?error=El profesor " . $prof . " no imparte " . $asig);
         }
