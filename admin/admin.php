@@ -10,6 +10,11 @@
 <body>
 <div class="container">
 <nav>
+  <a href="../admin/modificarpreguntasgenerales.php">Modificar Preguntas Generales</a>
+  <a href="../admin/modificarpreguntas.php">Modificar Preguntas</a>
+  <a href="../admin/borrarpreguntasgenerales.php">Borrar Preguntas Generales</a>
+  <a href="../admin/borrarpreguntas.php">Borrar Preguntas</a>
+  <a href="../admin/estadisticas.php">Ver Estadisticas</a>
   <a href="../login/logout.php?salir=1">Cerrar Sesión</a>
 </nav>
 </div>
