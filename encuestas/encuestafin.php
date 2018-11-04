@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,18 +13,15 @@
 <body>
 <div class="container">
     <div class="row">
-<div class="card">
+<div class="card"  style="margin: auto;">
 <span>GRACIAS POR REALIZAR LA CONSULTA</span>
 </div>
     </div>
 </div>
+<script>
+setTimeout(function () {
+   window.location.href= '/';
+}, 2000);
+</script>
 </body>
 </html>
-<?PHP
-
-session_start();
-session_destroy();
-
-header("refresh:10 ;url:../index.php");
-
-?>
