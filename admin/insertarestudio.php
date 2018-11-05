@@ -35,7 +35,7 @@ if (isset($_SESSION['user'])) {
   <tbody>
   <?php for ($i = 0; $i < count($tipos); $i++) {
         print("<tr>");
-        print("<td data-label=\"Tipo Encuesta\"></td>");
+        //print("<td data-label=\"Tipo Encuesta\"></td>");
         print("<ol>");
         print("<li>{$tipos[$i]}</li>");
         print("</ol></td></tr>");
