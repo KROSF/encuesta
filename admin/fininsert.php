@@ -25,7 +25,7 @@ session_start();
     <script>
         setTimeout(function () {
         window.location.href= 'admin.php';
-        }, 2000);
+        }, 8000);
     </script>
 </body>
 </html>

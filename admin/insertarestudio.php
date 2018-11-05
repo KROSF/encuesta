@@ -1,8 +1,6 @@
 <?php
-
 require "funciones.php";
 $db = include "../config/db.php";
-
 session_start();
 if (isset($_SESSION['user'])) {
     try {
@@ -16,6 +14,7 @@ if (isset($_SESSION['user'])) {
         exit("error" . $e->getMessage());
     }
     ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,51 +23,55 @@ if (isset($_SESSION['user'])) {
     <link rel="stylesheet" href="../static/bulma.min.css">
     <title>Insertar Estudio </title>
 </head>
-<body>
-<div class="container">
-<table class="hoverable">
-  <thead>
-    <tr>
-      <th>Id TipoEncuesta</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php for ($i = 0; $i < count($tipos); $i++) {
-        print("<tr>");
-        print("<td data-label=\"Id TipoEncuesta\">{$tipos[$i][0]}</td>");
-        print("<td data-label=\"Id Preguntas\">");
-        print("<ol>");
-        for ($j = 1; $j < count($tipos[$i]); $j++) {
-            if ($tipos[$i][$j] != "") {
-                print("<li>{$tipos[$i][$j]}</li>");
-            }
-        }
-        print("</ol></td></tr>");
-    }
-    ?>
-  </tbody>
-</table>
-<form action="insertarest.php" method="post">
-<div class="field">
-  <label class="label">Introduzca Id TipoEncuesta , Fecha y Ciudad  </label>
-</div>
-<div class="control">
-<label>Id TipoEncuesta</label>
-<input type="text" class="input is-primary" name='tipo'></textarea>
-<label>Fecha</label>
-<input type="date" class="input is-primary" name='date'>
-<label>Ciudad</label>
-<input type="text" class="input is-primary" name='city'></textarea>
-</div>
-<div class="field is-grouped">
-  <div class="control">
 
-    <button class="button is-link" name="aceptar">Aceptar</button>
-    <button class="button is-link" name="atras">Atras</button>
-  </div>
-</div>
-</form>
-</div>
+<body>
+    <div class="hero-body">
+        <div class="container">
+            <table class="hoverable">
+                <thead>
+                    <tr>
+                        <th>Id Tipo Encuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 0; $i < count($tipos); $i++) {
+                        print("<tr>");
+                        print("<td data-label=\"Id TipoEncuesta\">{$tipos[$i][0]}</td>");
+                        print("<td data-label=\"Id Preguntas\">");
+                        print("<ol>");
+                        for ($j = 1; $j < count($tipos[$i]); $j++) {
+                            if ($tipos[$i][$j] != "") {
+                                print("<li>{$tipos[$i][$j]}</li>");
+                            }
+                        }
+                        print("</ol></td></tr>");
+                    }
+                    ?>
+                </tbody>
+            </table>
+            <form action="insertarest.php" method="post">
+                <div class="field">
+                    <br>
+                    <label class="label">Introduzca Id TipoEncuesta , Fecha y Ciudad  </label>
+                </div>
+                <div class="control">
+                    <label>Id TipoEncuesta</label>
+                    <input type="text" class="input is-normal" name='tipo'></textarea>
+                    <label>Fecha</label>
+                    <input type="date" class="input is-normal" name='date'>
+                    <label>Ciudad</label>
+                    <input type="text" class="input is-normal" name='city'></textarea>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <br>
+                        <button class="button is-link" name="atras">Atras</button>
+                        <button class="button is-link" name="aceptar">Aceptar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
 <?php

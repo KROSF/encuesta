@@ -50,23 +50,19 @@ if (isset($_SESSION['user'])) {
     } ?>
             </tbody>
             </table>
-        <form action="borrarpreg.php" method="post">
-            <div class="field">
-                <div class="control">
-                    <input class="input is-normal" type="text" placeholder="Ingrese Tipo Encuesta" autofocus="" name="encuesta">
+            <form action="borrarpreg.php" method="post">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-normal" type="text" placeholder="Ingrese Tipo Encuesta" autofocus="" name="encuesta">
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-block is-info is-normal">Enviar</button>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" name="atras">Atras</button>
+                        <button class="button is-link">Enviar</button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-block is-info is-normal" name="atras">Atras</button>
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
     </div>
 </body>
