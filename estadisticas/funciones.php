@@ -74,7 +74,7 @@ function filtrosQuery($array, $query)
     for ($i = 0; $i < count($array[0]) - 1; $i++) {
         $query .= sprintf("%s= %s AND ", $array[0][$i], $array[1][$i]);
     }
-    $query .= sprintf("%s %s", $array[0][$i], $array[1][$i]);
+    $query .= sprintf("%s= %s))", $array[0][$i], $array[1][$i]);
     return $query;
 }
 
