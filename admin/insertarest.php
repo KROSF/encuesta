@@ -8,7 +8,7 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
         $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query = "INSERT INTO ESTUDIOS (id_tipoencuesta,fecha,ciudad)
+        $query = "INSERT INTO ESTUDIO(id_tipoencuesta,fecha,ciudad)
         VALUES (:tipoen,:fe,:ci)";
 
         $resultado = $conexion->prepare($query);
