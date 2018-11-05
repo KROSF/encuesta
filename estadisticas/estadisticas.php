@@ -36,7 +36,7 @@ if (isset($_SESSION['encuesta'])) {
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
     <div class="container has-text-centered">
-        <div class="columns is-mobile">
+        <div class="columns">
             <div class="column is-3">
                 <div class="card">
                     <div class="card-content">
@@ -69,7 +69,7 @@ if (isset($_SESSION['encuesta'])) {
                 </div>
             </div>
             <div class="column is-9">
-                <div class="columns is-mobile is-multiline">
+                <div class="columns is-multiline">
                     <?php if (isset($_POST['filtro'])) {include "graficas.php";} ?>
                 </div>
             </div>
