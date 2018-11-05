@@ -9,13 +9,9 @@ if (isset($_SESSION['user'])) {
         $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query1 = "SELECT * FROM PREGUNTAS ";
-        $query2 = "SELECT * FROM PREGUNTASGENERALES";
-        $query3 = "SELECT * FROM OPCIONESPREGUNTAS";
-
+        $query1 = "SELECT * FROM TIPOENCUESTA ";
         $pregs = getArrayQuery($conexion, $query1, array(array()));
-        $pregsgen = getArrayQuery($conexion, $query2, array(array()));
-        $opc = getArrayQuery($conexion, $query3, array(array()));
+
     } catch (Exception $e) {
         exit("error" . $e->getMessage());
     }
@@ -40,7 +36,7 @@ if (isset($_SESSION['user'])) {
   <tbody>
     <?php for ($i = 0; $i < count($pregs); $i++) {
         print("<tr>");
-        print("<td data-label=\"Id Preguntas\">{$pregs[$i][0]}</td>");
+        print("<td data-label=\"Id TipoEncuesta\">{$pregs[$i][0]}</td>");
         print("<td data-label=\"Preguntas\">");
         print("<ol>");
         for ($j = 1; $j < count($pregs[$i]); $j++) {
