@@ -87,7 +87,7 @@ if (isset($_SESSION['user'])) {
         print("<td data-label=\"Id Preguntas Generales\">{$pregsgen[$i][count($pregsgen[$i])]}</td>");
         print("<td data-label=\"Preguntas\">");
         print("<ol>");
-        for ($j = 1; $j < count($pregsgen[$i]); $j++) {
+        for ($j = 1; $j < count($pregsgen[$i]-1); $j++) {
             if ($pregsgen[$i][$j] != "") {
                 print("<li>{$pregsgen[$i][$j]}</li>");
             }
