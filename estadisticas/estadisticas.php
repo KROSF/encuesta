@@ -38,10 +38,13 @@ if (isset($_SESSION['encuesta'])) {
     <div class="container has-text-centered">
         <div class="columns">
             <div class="column is-3">
-                <h2 class="title">Filtros</h2>
-                <form action="estadisticas.php" method="post">
-                    <p class="control">
-                        <input type="submit" class="button is-primary" value="Sin filtro" name="filtro" />
+                <div class="card">
+                    <div class="card-content">
+                    <p class="title">Filtros</p>
+                    <p class="subtitle">Seleccione los filtos deseados.</p>
+                    <form action="estadisticas.php" method="post">
+                    <p class="control has-text-centered">
+                        <input type="submit" class="button is-primary" value="Aplicar" name="filtro" />
                     </p>
                     <?php for ($i = 1; $i < count($preguntas); $i++): ?>
                         <div class="field">
@@ -62,6 +65,8 @@ if (isset($_SESSION['encuesta'])) {
                         </div>
                     <?php endfor; ?>
                 </form>
+                    </div>
+                </div>
             </div>
             <div class="column is-9">
                 <div class="columns is-multiline">
