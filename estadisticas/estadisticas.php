@@ -36,10 +36,6 @@ if (isset($_SESSION['encuesta'])) {
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
     <div class="container has-text-centered">
-        <pre>
-        <?php if (isset($_POST['filtro'])) {print_r($post);
-        print(count($post));} ?>
-        </pre>
         <div class="columns">
             <h2 class="title">Filtros</h2>
             <div class="column is-3">
