@@ -84,7 +84,7 @@ if (isset($_SESSION['user'])) {
   <tbody>
     <?php for ($i = 0; $i < count($pregsgen); $i++) {
         print("<tr>");
-        print("<td data-label=\"Id Preguntas Generales\">{$pregsgen[$i][count($pregsgen[$i]) - 1]}</td>");
+        print("<td data-label=\"Id Preguntas Generales\">{$pregsgen[$i][count($pregsgen[$i])]}</td>");
         print("<td data-label=\"Preguntas\">");
         print("<ol>");
         for ($j = 1; $j < count($pregsgen[$i]) - 1; $j++) {
