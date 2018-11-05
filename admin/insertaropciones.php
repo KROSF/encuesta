@@ -18,7 +18,7 @@
 <body>
   <div class="hero-body">
     <div class="container">
-      <form action="introdpreg.php" method="post">
+      <form action="insertopc.php" method="post">
         <div class="field">
           <h2 class="title">Introduzca opciones</label>
         </div>

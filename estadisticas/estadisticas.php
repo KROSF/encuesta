@@ -37,9 +37,8 @@ if (isset($_SESSION['encuesta'])) {
 <div class="hero-body">
     <div class="container has-text-centered">
         <div class="columns">
-            <h2 class="title">Filtros</h2>
             <div class="column is-3">
-                <br>
+                <h2 class="title">Filtros</h2>
                 <form action="estadisticas.php" method="post">
                     <p class="control">
                         <input type="submit" class="button is-primary" value="Sin filtro" name="filtro" />
