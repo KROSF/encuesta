@@ -78,19 +78,16 @@ $title = "Selección de Encuesta";include "../template/head.php"
                                     </div>
                                 </div>
                             </div>
+                            <?php if (isset($_GET['error'])): ?>
+                    <div class="notification is-danger has-text-grey-dark">
+                        <p><?php print($_GET['error']) ?></p>
+                    </div>
+                    <?php endif; ?>
                             <a class="button is-link" href="../index.php"><b>Atras</b></a>
                             <input type="submit" value="Siguiente" class="button is-link" name="encuesta"/>
                     </div>
                 </form>
-                    <?php if (isset($_GET['error'])): ?>
-                    <div class="card warning">
-                        <p>
-                            <span class="icon-alert"></span>
-                            <?php print($_GET['error']) ?>
-                        </p>
-                    </div>
-                    <?php endif; ?>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
