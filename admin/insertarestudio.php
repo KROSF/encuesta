@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
         print("<td data-label=\"Id TipoEncuesta\">{$tipos[$i][0]}</td>");
         print("<td data-label=\"Id Preguntas\">");
         print("<ol>");
-        for ($j = 1; $j < count($tipos[$i]) - 1; $j++) {
+        for ($j = 1; $j < count($tipos[$i]); $j++) {
             if ($tipos[$i][$j] != "") {
                 print("<li>{$tipos[$i][$j]}</li>");
             }
