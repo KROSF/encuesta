@@ -1,7 +1,7 @@
 <?php
 return [
     'host' => 'localhost',
-    'name' => 'BD',
+    'name' => 'root',
     'user' => 'lokeon',
-    'pass' => '998022',
+    'pass' => '998022zdr',
 ];
