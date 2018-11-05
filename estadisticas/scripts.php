@@ -29,13 +29,6 @@
         },
         options: {
             responsive: true,
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            },
             annotation: {
       annotations: [{
         type: 'line',
@@ -45,11 +38,18 @@
         borderColor: 'rgb(75, 192, 192)',
         borderWidth: 4,
         label: {
-          enabled: false,
-          content: 'Test label'
+          enabled: true,
+          content: 'Media'
         }
       }]
-    }
+    },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
         }
     });
 </script>
