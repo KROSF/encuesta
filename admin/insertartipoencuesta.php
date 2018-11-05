@@ -62,7 +62,7 @@ if (isset($_SESSION['user'])) {
   <tbody>
     <?php for ($i = 0; $i < count($opc); $i++) {
         print("<tr>");
-        print("<td data-label=\"Id Opciones\">{$opc[$i][count($opc[$i])]}</td>");
+        print("<td data-label=\"Id Opciones\">{$opc[$i][count($opc[$i]-1)]}</td>");
         print("<td data-label=\"Opciones\">");
         print("<ol>");
         for ($j = 1; $j < count($opc[$i]-1); $j++) {
