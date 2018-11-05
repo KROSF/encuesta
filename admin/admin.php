@@ -35,7 +35,7 @@
               <p class="title has-text-centered">Modificar Preguntas</p>
               <p class="subtitle has-text-centered">Modificar las posibles preguntas</p>
               <p>
-                <a href="../admin/modificarpreguntas.php">Adminsitrar</a>
+                <a href="../admin/modificarpreguntas.php">Administrar</a>
               </p>
             </article>
           </div>
@@ -85,7 +85,7 @@
                 <a href="../admin/insertaropciones.php">Administrar</a>
               </p>
             </article>
-
+          </div>
         </div>
       </div>
     </div>

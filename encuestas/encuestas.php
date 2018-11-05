@@ -45,7 +45,7 @@ try {
                             <h3 class="title has-text-centered has-text-grey">Seleccione Encuesta</h3>
                                 <div class="field">
                                     <label class="label">Profesor</label>
-                                    <div class="control">
+                                    <div class="control has-text-centered">
                                         <div class="select">
                                             <select id="profesor" name="profesor">
                                                 <?php foreach ($prof as $p) {print("<option>" . $p[0] . "</option>\n");} ?>
@@ -53,7 +53,7 @@ try {
                                         </div>
                                     </div>
                                     <label class="label">Asignatura</label>
-                                    <div class="control">
+                                    <div class="control has-text-centered">
                                         <div class="select">
                                             <select id="asignatura" name="asignatura">
                                                 <?php foreach ($asig as $a) {print("<option>" . $a[0] . "</option>\n");} ?>
@@ -80,7 +80,7 @@ try {
                             <h3 class="title has-text-centered has-text-grey">Seleccione Ciudad</h3>
                                 <div class="field">
                                     <label class="label">Ciudad</label>
-                                    <div class="control">
+                                    <div class="control has-text-centered">
                                         <div class="select">
                                             <select id="ciudad" name="ciudad">
                                                 <?php foreach ($ciudades as $c) {print("<option>" . $c[0] . "</option>\n");} ?>
