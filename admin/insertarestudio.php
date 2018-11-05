@@ -26,15 +26,10 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Insertar TipoEncuesta </title>
+    <title>Insertar Estudio </title>
 </head>
 <body>
 <div class="container">
-  <pre>
-    <?php print_r($pregs);
-    print_r($pregsgen);
-    print_r($opc) ?>
-  </pre>
 <table class="hoverable">
   <thead>
     <tr>
