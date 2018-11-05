@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
         $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query1 = "SELECT PREGUNTAS.*, TIPOENCUESTA.id_tipoencuesta FROM PREGUNTAS INNER JOIN TIPOENCUESTA ON PREGUNTAS.id_preguntas = TIPOENCUESTA.id_preguntas";
+        $query1 = "SELECT PREGUNTAS.*, TIPOENCUESTA.*, FROM PREGUNTAS INNER JOIN TIPOENCUESTA ON PREGUNTAS.id_preguntas = TIPOENCUESTA.id_preguntas";
         $pregs = getArrayQuery($conexion, $query1, array(array()));
 
     } catch (Exception $e) {
