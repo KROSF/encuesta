@@ -41,7 +41,7 @@ try {
                 <div class="column is-4 is-offset-4">
                     <?php if (isset($_SESSION['tipoencuesta'])) { ?>
                     <form action="#" method="post">
-                        <fieldset>
+                        <div class="box">
                             <h3 class="title has-text-centered has-text-grey">Seleccione Encuesta</h3>
                                 <div class="field">
                                     <label class="label">Profesor</label>
@@ -64,7 +64,7 @@ try {
                                     <input type="submit" value="Atras" class="button is-link" name="atras" />
                                     <input type="submit" value="Empezar" class="button is-link" name="empezar" />
                                 </div>
-                        </fieldset>
+                        </div>
                     </form>
 
                     <?php if (isset($_GET['error'])): ?>
@@ -76,7 +76,7 @@ try {
                     <?php endif; ?>
                     <?php } else { ?>
                     <form action="#" method="post">
-                        <fieldset>
+                        <div class="box">
                             <h3 class="title has-text-centered has-text-grey">Seleccione Ciudad</h3>
                                 <div class="field">
                                     <label class="label">Ciudad</label>
@@ -90,7 +90,7 @@ try {
                                 </div>
                                 <a class="button is-link" href="../index.php"><b>Atras</b></a>
                                 <input type="submit" value="Siguiente" class="button is-link" name="encuesta"/>
-                        </fieldset>
+                        </div>
                     </form>
                         <?php if (isset($_GET['error'])): ?>
                         <div class="card warning">
