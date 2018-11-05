@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
         $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query1 = "SELECT PREGUNTAS.*, TIPOENCUESTA.id_tipoencuesta, FROM PREGUNTAS INNER JOIN TIPOENCUESTA ON PREGUNTAS.id_preguntas = TIPOENCUESTA.id_preguntas";
+        $query1 = "SELECT id_tipoencuesta FROM TIPOENCUESTA";
         $tipos = getArrayQuery($conexion, $query1, array(array()));
 
     } catch (Exception $e) {
@@ -36,14 +36,7 @@ if (isset($_SESSION['user'])) {
   <tbody>
   <?php for ($i = 0; $i < count($tipos); $i++) {
         print("<tr>");
-        print("<td data-label=\"Tipo Encuesta\">{$tipos[$i][count($tipos[$i]) - 1]}</td>");
-        print("<td data-label=\"Preguntas\">");
-        print("<ol>");
-        for ($j = 1; $j < count($tipos[$i]) - 1; $j++) {
-            if ($tipos[$i][$j] != "") {
-                print("<li>{$tipos[$i][$j]}</li>");
-            }
-        }
+        print("<td data-label=\"Tipo Encuesta\">{$tipos[$i]}</td>");
         print("</ol></td></tr>");
     } ?>
   </tbody>
