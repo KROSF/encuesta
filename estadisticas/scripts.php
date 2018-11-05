@@ -34,7 +34,7 @@
         type: 'line',
         mode: 'horizontal',
         scaleID: 'y-axis-0',
-        value: 5,
+        value: 2,
         borderColor: 'rgb(75, 192, 192)',
         borderWidth: 4,
         label: {
