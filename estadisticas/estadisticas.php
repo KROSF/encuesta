@@ -44,7 +44,7 @@ if (isset($_SESSION['encuesta'])) {
                     <p class="subtitle">Seleccione los filtos deseados.</p>
                     <form action="estadisticas.php" method="post">
                     <p class="control has-text-centered">
-                        <input type="submit" class="button is-primary" value="Aplicar" name="filtro" />
+                        <input type="submit" class="button is-link" value="Aplicar" name="filtro" />
                     </p>
                     <?php for ($i = 1; $i < count($preguntas); $i++): ?>
                         <div class="field">
