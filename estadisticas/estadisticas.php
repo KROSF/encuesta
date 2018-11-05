@@ -14,20 +14,10 @@ if (isset($_SESSION['encuesta'])) {
     $opciones = opcionesFiltros();
     if (isset($_POST['filtro'])) {
         $post = comprobarPOST();
-        if (count($post) > 0) {
+        if (!empty($post[0]) && !empty($post[1])) {
             $respuestas = respuestas(getQueryArray($conexion, filtrosQuery($post, $queries['general']), array(array())));
         } else {
-            switch ($_POST['filtro']) {
-                case 'Sin filtro':
-                    $respuestas = respuestas(getQueryArray($conexion, $queries['sinfiltro'], array(array())));
-                    break;
-                case 'Sexo':
-                    $respuestas = respuestas(getQueryArray($conexion, $queries['sexo'], array(array(":sexo"), array("Mujer"))));
-                    break;
-                case 'Edad':
-                    $respuestas = respuestas(getQueryArray($conexion, $queries['edad'], array(array())));
-                    break;
-            }
+            $respuestas = respuestas(getQueryArray($conexion, $queries['sinfiltro'], array(array())));
         }
     }
     ?>
@@ -46,6 +36,10 @@ if (isset($_SESSION['encuesta'])) {
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
     <div class="container has-text-centered">
+        <pre>
+        <?php if (isset($_POST['filtro'])) {print_r($post);
+        print(count($post));} ?>
+        </pre>
         <div class="columns">
             <h2 class="title">Filtros</h2>
             <div class="column is-3">
@@ -63,9 +57,9 @@ if (isset($_SESSION['encuesta'])) {
                                     <option disabled selected value> Seleccione una opción </option>
                                     <?php for ($j = 0; $j < count($opciones[$i]); $j++): ?>
                                         <?php if ($i == 2) {
-                                            printf("<option value=\"'%s'\">%s</option>", $opciones[$i][$j], $opciones[$i][$j]);
-                                        } else {
-                                            printf("<option value='%d'>%s</option>", $j + 1, $opciones[$i][$j]);} ?>
+        printf("<option value=\"'%s'\">%s</option>", $opciones[$i][$j], $opciones[$i][$j]);
+    } else {
+        printf("<option value='%d'>%s</option>", $j + 1, $opciones[$i][$j]);} ?>
                                     <?php endfor; ?>
                                     </select>
                                 </div>
