@@ -58,7 +58,7 @@ if (isset($_SESSION['encuesta'])) {
                 </div>
             </div>
             <div class="column is-9">
-                <div class="columns is-multiline">
+                <div class="columns is-multiline" style="display:block">
                     <?php if (isset($_POST['filtro'])) {include "graficas.php";} ?>
                 </div>
             </div>
