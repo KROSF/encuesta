@@ -44,7 +44,7 @@ if (isset($_SESSION['user'])) {
             }
         }
         print("</ol></td></tr>");
-
+    }
     ?>
   </tbody>
 </table>
