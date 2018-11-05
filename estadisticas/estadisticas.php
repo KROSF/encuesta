@@ -26,7 +26,7 @@ if (isset($_SESSION['encuesta'])) {
 <div class="hero-body">
     <div class="container">
         <div class="columns">
-            <div class="column is-3">
+            <div class="column is-3" style="display:block">
                 <div class="card">
                     <div class="card-content">
                     <p class="title">Filtros</p>
@@ -57,7 +57,7 @@ if (isset($_SESSION['encuesta'])) {
                     </div>
                 </div>
             </div>
-            <div class="column is-9">
+            <div class="column is-9" style="display:block">
                 <div class="columns is-multiline">
                     <?php if (isset($_POST['filtro'])) {include "graficas.php";} ?>
                 </div>
