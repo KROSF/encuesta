@@ -29,8 +29,7 @@ if (isset($_SESSION['user'])) {
 <table class="hoverable">
   <thead>
     <tr>
-      <th>Id Preguntas</th>
-      <th>Preguntas</th>
+      <th>Id TipoEncuesta</th>
     </tr>
   </thead>
   <tbody>
@@ -38,11 +37,10 @@ if (isset($_SESSION['user'])) {
         print("<tr>");
         print("<td data-label=\"Tipo Encuesta\"></td>");
         print("<ol>");
-        if ($tipos[$i] != "") {
-            print("<li>{$tipos[$i]}</li>");
-        }
+        print("<li>{$tipos[$i]}</li>");
+        print("</ol></td></tr>");
     }
-    print("</ol></td></tr>");
+
     ?>
   </tbody>
 </table>
