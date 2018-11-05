@@ -24,7 +24,7 @@ if (isset($_SESSION['encuesta'])) {
 <body>
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
-    <div class="container is-fluid" style="padding-left: 0.75rem;padding-right: 0.75rem;">
+    <div class="container is-fluid">
         <div class="columns is-multiline">
             <div class="column is-3" style="display:block">
                 <div class="card">
