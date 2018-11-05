@@ -17,17 +17,8 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
     } catch (Exception $e) {
         exit("error" . $e->getMessage());
     }
+    $title = "Modificar Preguntas Generales";include "../template/head.php"
     ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Modificar Preguntas Generales</title>
-</head>
-
 <body>
     <div class="container">
         <div class="hero-body">
@@ -38,10 +29,10 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
                         <div class="select">
                             <select name="pregunta">
                                 <?php for ($j = 1; $j < count($pregs); $j++) {
-                                    if ($pregs[$j] != "") {
-                                        print("<option value='$j'>$pregs[$j]</option>\n");
-                                    }
-                                } ?>
+        if ($pregs[$j] != "") {
+            print("<option value='$j'>$pregs[$j]</option>\n");
+        }
+    } ?>
                             </select>
                         </div>
                     </div>

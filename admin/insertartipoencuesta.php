@@ -17,17 +17,8 @@ if (isset($_SESSION['user'])) {
     } catch (Exception $e) {
         exit("error" . $e->getMessage());
     }
+    $title = "Insertar Tipo Encuesta";include "../template/head.php"
     ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Insertar Tipo Encuesta </title>
-</head>
-
 <body>
   <div class="container">
     <div class="hero-body">
@@ -40,17 +31,17 @@ if (isset($_SESSION['user'])) {
         </thead>
         <tbody>
           <?php for ($i = 0; $i < count($pregs); $i++) {
-              print("<tr>");
-              print("<td data-label=\"Id Preguntas\">{$pregs[$i][0]}</td>");
-              print("<td data-label=\"Preguntas\">");
-              print("<ol>");
-              for ($j = 1; $j < count($pregs[$i]) - 1; $j++) {
-                  if ($pregs[$i][$j] != "") {
-                      print("<li>{$pregs[$i][$j]}</li>");
-                  }
-              }
-              print("</ol></td></tr>");
-          } ?>
+        print("<tr>");
+        print("<td data-label=\"Id Preguntas\">{$pregs[$i][0]}</td>");
+        print("<td data-label=\"Preguntas\">");
+        print("<ol>");
+        for ($j = 1; $j < count($pregs[$i]) - 1; $j++) {
+            if ($pregs[$i][$j] != "") {
+                print("<li>{$pregs[$i][$j]}</li>");
+            }
+        }
+        print("</ol></td></tr>");
+    } ?>
         </tbody>
       </table>
       <br>
@@ -63,17 +54,17 @@ if (isset($_SESSION['user'])) {
         </thead>
         <tbody>
           <?php for ($i = 0; $i < count($opc); $i++) {
-              print("<tr>");
-              print("<td data-label=\"Id Opciones\">{$opc[$i][0]}</td>");
-              print("<td data-label=\"Opciones\">");
-              print("<ol>");
-              for ($j = 1; $j < count($opc[$i]); $j++) {
-                  if ($opc[$i][$j] != "") {
-                      print("<li>{$opc[$i][$j]}</li>");
-                  }
-              }
-              print("</ol></td></tr>");
-          } ?>
+        print("<tr>");
+        print("<td data-label=\"Id Opciones\">{$opc[$i][0]}</td>");
+        print("<td data-label=\"Opciones\">");
+        print("<ol>");
+        for ($j = 1; $j < count($opc[$i]); $j++) {
+            if ($opc[$i][$j] != "") {
+                print("<li>{$opc[$i][$j]}</li>");
+            }
+        }
+        print("</ol></td></tr>");
+    } ?>
         </tbody>
       </table>
       <br>
@@ -86,17 +77,17 @@ if (isset($_SESSION['user'])) {
         </thead>
         <tbody>
           <?php for ($i = 0; $i < count($pregsgen); $i++) {
-              print("<tr>");
-              print("<td data-label=\"Id Preguntas Generales\">{$pregsgen[$i][0]}</td>");
-              print("<td data-label=\"Preguntas\">");
-              print("<ol>");
-              for ($j = 1; $j < count($pregsgen[$i]); $j++) {
-                  if ($pregsgen[$i][$j] != "") {
-                      print("<li>{$pregsgen[$i][$j]}</li>");
-                  }
-              }
-              print("</ol></td></tr>");
-          } ?>
+        print("<tr>");
+        print("<td data-label=\"Id Preguntas Generales\">{$pregsgen[$i][0]}</td>");
+        print("<td data-label=\"Preguntas\">");
+        print("<ol>");
+        for ($j = 1; $j < count($pregsgen[$i]); $j++) {
+            if ($pregsgen[$i][$j] != "") {
+                print("<li>{$pregsgen[$i][$j]}</li>");
+            }
+        }
+        print("</ol></td></tr>");
+    } ?>
         </tbody>
       </table>
       <form action="inserttipo.php" method="post">
