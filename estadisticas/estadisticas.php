@@ -35,7 +35,7 @@ if (isset($_SESSION['encuesta'])) {
 <body>
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
-    <div class="container has-text-centered">
+    <div class="container">
         <div class="columns">
             <div class="column is-3">
                 <div class="card">
