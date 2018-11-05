@@ -58,7 +58,7 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
 <div class="field is-grouped">
   <div class="control">
     <button class="button is-link" name="atras">Atras</button>
-    <button class="button is-link" name="aceptar">Aceptar</button>
+    <button class="button is-link" name="aceptar">Enviar</button>
   </div>
 </div>
 </form>

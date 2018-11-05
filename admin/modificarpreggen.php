@@ -1,8 +1,6 @@
 <?php
-
 require "funciones.php";
 $db = include "../config/db.php";
-
 session_start();
 if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
     if (isset($_POST['encuesta'])) {
@@ -20,6 +18,7 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
         exit("error" . $e->getMessage());
     }
     ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,44 +27,40 @@ if (isset($_SESSION['user']) && !isset($_POST['atras'])) {
     <link rel="stylesheet" href="../static/bulma.min.css">
     <title>Modificar Preguntas Generales</title>
 </head>
+
 <body>
-<div class="container">
-<form action="enviarpreggen.php?index=<?php print($_SESSION['encuesta']); ?>" method="post">
-<div class="field">
-  <label class="label">Seleccione Pregunta</label>
-  <div class="control">
-    <div class="select">
-      <select name="pregunta">
-      <?php for ($j = 1; $j < count($pregs); $j++) {
-        if ($pregs[$j] != "") {
-
-            print("<option value='$j'>$pregs[$j]</option>\n");
-        }
-
-    } ?>
-      </select>
-    </div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Nueva pregunta</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Textarea" name="nuevapreg" ></textarea>
-  </div>
-</div>
-<div class="field">
-        <div class="control">
-            <button class="button is-block is-info is-normal">Enviar</button>
+    <div class="container">
+        <div class="hero-body">
+            <form action="enviarpreggen.php?index=<?php print($_SESSION['encuesta']); ?>" method="post">
+                <div class="field">
+                    <label class="label">Seleccione Pregunta</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="pregunta">
+                                <?php for ($j = 1; $j < count($pregs); $j++) {
+                                    if ($pregs[$j] != "") {
+                                        print("<option value='$j'>$pregs[$j]</option>\n");
+                                    }
+                                } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Nueva pregunta</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Textarea" name="nuevapreg" ></textarea>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" name="atras">Atras</button>
+                        <button class="button is-link">Enviar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="field">
-        <div class="control">
-            <button class="button is-block is-info is-normal" name="atras">Atras</button>
-        </div>
-    </div>
-</form>
-</div>
 </body>
 </html>
 <?php
