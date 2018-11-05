@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
         $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $query1 = "SELECT * FROM TIPOENCUESTA";
+        $query1 = "SELECT id_tipoencuesta,id_preguntas FROM TIPOENCUESTA";
         $tipos = getArrayQuery($conexion, $query1, array(array()));
 
     } catch (Exception $e) {
