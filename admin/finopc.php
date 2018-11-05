@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Fin Insert TipoEncuesta</title>
+    <title>Fin Insert Opciones</title>
 </head>
 
 <body>
