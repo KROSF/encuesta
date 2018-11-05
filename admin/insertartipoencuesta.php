@@ -30,6 +30,11 @@ if (isset($_SESSION['user'])) {
 </head>
 <body>
 <div class="container">
+  <pre>
+    <?php print_r($pregs);
+    print_r($pregsgen);
+    print_r($opc) ?>
+  </pre>
 <table class="hoverable">
   <thead>
     <tr>
