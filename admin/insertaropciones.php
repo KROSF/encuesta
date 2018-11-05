@@ -18,13 +18,13 @@
 <body>
   <div class="hero-body">
     <div class="container">
-      <form action="introdpreg.php" method="post">
+      <form action="insertopc.php" method="post">
         <div class="field">
-          <h2 class="title">Introduzca preguntas</label>
+          <h2 class="title">Introduzca opciones</label>
         </div>
         <?php for ($i = 0; $i < 6; $i++): ?>
           <div class="control">
-            <label>Pregunta <?PHP print($i + 1); ?></label>
+            <label>Opcion <?PHP print($i + 1); ?></label>
             <input type="text" class="input is-primary" name='<?PHP printf("opcs%d", $i + 1); ?>'></textarea>
           </div>
         <?PHP endfor; ?>
