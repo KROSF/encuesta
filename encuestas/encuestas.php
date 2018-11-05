@@ -52,18 +52,19 @@ $title = "Selección de Encuesta";include "../template/head.php"
                                     </div>
                                 </div>
                                 <br>
+                                <?php if (isset($_GET['error'])): ?>
+                                <div class="control has-text-centered">
+                                <div class="notification is-danger has-text-grey-dark">
+                                <p><?php print($_GET['error']) ?></p>
+                                </div>
+                                </div>
+                                <br>
+                                <?php endif; ?>
                                 <input type="submit" value="Atras" class="button is-link" name="atras" />
                                 <input type="submit" value="Empezar" class="button is-link" name="empezar" />
                             </div>
                     </div>
                 </form>
-                <?php if (isset($_GET['error'])): ?>
-                    <div class="card error">
-                        <p><span class="icon-alert"></span>
-                            <?php print($_GET['error']) ?>
-                        </p>
-                    </div>
-                <?php endif; ?>
                 <?php } else { ?>
                 <form action="#" method="post">
                     <div class="box">
@@ -78,11 +79,15 @@ $title = "Selección de Encuesta";include "../template/head.php"
                                     </div>
                                 </div>
                             </div>
-                            <?php if (isset($_GET['error'])): ?>
-                    <div class="notification is-danger has-text-grey-dark">
-                        <p><?php print($_GET['error']) ?></p>
-                    </div>
-                    <?php endif; ?>
+                            <br>
+                                <?php if (isset($_GET['error'])): ?>
+                                <div class="control has-text-centered">
+                                <div class="notification is-danger has-text-grey-dark">
+                                <p><?php print($_GET['error']) ?></p>
+                                </div>
+                                </div>
+                                <br>
+                                <?php endif; ?>
                             <a class="button is-link" href="../index.php"><b>Atras</b></a>
                             <input type="submit" value="Siguiente" class="button is-link" name="encuesta"/>
                     </div>

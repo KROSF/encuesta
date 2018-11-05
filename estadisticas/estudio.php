@@ -1,11 +1,13 @@
 <?php
-if (!isset($_POST['encuesta'])) {
-    session_start();
-    $db = include "../config/db.php";
-    $queries = include "./filtros.php";
-    require "./funciones.php";
-    $conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+session_start();
+$db = include "../config/db.php";
+$queries = include "./filtros.php";
+require "./funciones.php";
+$conexion = new PDO("mysql:host=" . $db['host'] . "; dbname=" . $db['name'], $db['user'], $db['pass']);
+$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if (isset($_POST['encuesta'])) {
+
+} else {
     $ciudades = getQueryArray($conexion, $queries['ciudad'], array(array()));
 }
 $title = "Selección de Encuesta";include "../template/head.php" ?>
