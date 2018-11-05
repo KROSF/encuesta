@@ -36,9 +36,14 @@ if (isset($_SESSION['user'])) {
   <tbody>
   <?php for ($i = 0; $i < count($tipos); $i++) {
         print("<tr>");
-        print("<td data-label=\"Tipo Encuesta\">{print($tipos[$i]);}</td>");
-        print("</ol></td></tr>");
-    } ?>
+        print("<td data-label=\"Tipo Encuesta\"></td>");
+        print("<ol>");
+        if ($tipos[$i] != "") {
+            print("<li>{$tipos[$i]}</li>");
+        }
+    }
+    print("</ol></td></tr>");
+    ?>
   </tbody>
 </table>
 <form action="insertarest.php" method="post">
