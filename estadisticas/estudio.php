@@ -8,17 +8,7 @@ if (!isset($_POST['encuesta'])) {
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $ciudades = getQueryArray($conexion, $queries['ciudad'], array(array()));
 }
-?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Selección de Encuesta</title>
-</head>
-
+$title = "Selección de Encuesta";include "../template/head.php" ?>
 <body>
     <div calss="hero-body">
         <div class="container has-text-centered">

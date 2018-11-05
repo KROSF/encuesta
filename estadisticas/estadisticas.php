@@ -20,18 +20,7 @@ if (isset($_SESSION['encuesta'])) {
             $respuestas = respuestas(getQueryArray($conexion, $queries['sinfiltro'], array(array())));
         }
     }
-    ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Estadísticas</title>
-    <link rel="stylesheet" href="../static/bulma.min.css">
-</head>
-
+    $title = "Estadísticas";include "../template/head.php" ?>
 <body>
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
