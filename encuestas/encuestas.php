@@ -60,8 +60,9 @@ try {
                                             </select>
                                         </div>
                                     </div>
-                                    <input type="submit" value="Empezar" class="button is-link" name="empezar" />
+                                    <br>
                                     <input type="submit" value="Atras" class="button is-link" name="atras" />
+                                    <input type="submit" value="Empezar" class="button is-link" name="empezar" />
                                 </div>
                         </fieldset>
                     </form>
@@ -87,7 +88,8 @@ try {
                                         </div>
                                     </div>
                                 </div>
-                                <input type="submit" value="Siguiente" class="primary rounded" name="encuesta" />
+                                <a class="button is-link" href="../index.php"><b>Atras</b></a>
+                                <input type="submit" value="Siguiente" class="button is-link" name="encuesta"/>
                         </fieldset>
                     </form>
                         <?php if (isset($_GET['error'])): ?>
