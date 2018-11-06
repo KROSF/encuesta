@@ -1,6 +1,4 @@
 <?php $title = "404 Not Found";include "head.php" ?>
-<head>
-</head>
 <body>
     <div class="hero-body">
         <div class="container">
