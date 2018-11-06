@@ -1,6 +1,6 @@
 <?php session_start();if (isset($_SESSION['user'])): ?>
 <?php $title = "Administración";include "../template/head.php" ?>
-<body style="color:lightskyblue">
+<body style="background-color:lightskyblue">
   <div class="container">
     <div class="hero-body">
       <div class="sandbox">
