@@ -54,9 +54,9 @@ $title = "Selección de Encuesta";include "../template/head.php"
                                 <br>
                                 <?php if (isset($_GET['error'])): ?>
                                 <div class="control has-text-centered">
-                                <div class="notification is-danger has-text-grey-dark">
-                                <p><?php print($_GET['error']) ?></p>
-                                </div>
+                                    <div class="notification is-danger has-text-grey-dark">
+                                        <p><?php print($_GET['error']) ?></p>
+                                    </div>
                                 </div>
                                 <br>
                                 <?php endif; ?>

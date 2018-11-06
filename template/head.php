@@ -13,6 +13,6 @@
   <meta name="msapplication-TileImage" content="/static/icons/mstile-144x144.png">
   <meta name="msapplication-config" content="/static/icons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="/static/bulma.min.css">
+  <link rel="stylesheet" href="/static/bulma.min.css" type="text/css" media="all"/>
   <title><?php print($title); ?></title>
 </head>
