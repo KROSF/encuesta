@@ -1,4 +1,4 @@
-<?php $title="404 Not Found"; include "./template/head.php" ?>
+<?php $title = "404 Not Found";include "head.php" ?>
 <head>
 </head>
 <body>
