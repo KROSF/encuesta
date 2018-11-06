@@ -16,16 +16,8 @@ if (isset($_SESSION['user'])) {
     } catch (Exception $e) {
         exit("error" . $e->getMessage());
     }
+    $title = "Modificar Preguntas Personales";include "../template/head.php"
     ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/bulma.min.css">
-    <title>Modificar Preguntas Personales</title>
-</head>
 <body>
     <div class="hero-body">
         <div class="container">
@@ -39,15 +31,15 @@ if (isset($_SESSION['user'])) {
                 </thead>
                 <tbody>
                     <?php for ($i = 0; $i < count($tipos); $i++) {
-            print("<tr>");
-            print("<td data-label=\"Tipo Encuesta\">{$tipos[$i][count($tipos[$i]) - 1]}</td>");
-            print("<td data-label=\"Preguntas Generales\">");
-            print("<ol>");
-            for ($j = 1; $j < count($tipos[$i]) - 1 && $tipos[$i][$j] != ""; $j++) {
-                print("<li>{$tipos[$i][$j]}</li>");
-            }
-            print("</ol></td></tr>");
-        } ?>
+        print("<tr>");
+        print("<td data-label=\"Tipo Encuesta\">{$tipos[$i][count($tipos[$i]) - 1]}</td>");
+        print("<td data-label=\"Preguntas Generales\">");
+        print("<ol>");
+        for ($j = 1; $j < count($tipos[$i]) - 1 && $tipos[$i][$j] != ""; $j++) {
+            print("<li>{$tipos[$i][$j]}</li>");
+        }
+        print("</ol></td></tr>");
+    } ?>
                 </tbody>
             </table>
             <form action="modificarpreggen.php" method="post">
