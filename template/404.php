@@ -5,7 +5,7 @@
             <h1 class="title">Houston, we have a problem!</h1>
             <div class="intro column is-8 is-offset-2">
                 <br>
-                <p class="subtitle>
+                <p class="subtitle">
                     Se ha producido un error en la página. Por favor vuelva a intentarlo.
                 </p>
             </div>
