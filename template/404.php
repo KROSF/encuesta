@@ -1,6 +1,4 @@
-<?php $title="404 Not Found"; include "./template/head.php" ?>
-<head>
-</head>
+<?php $title = "404 Not Found";include "head.php" ?>
 <body>
     <div class="hero-body">
         <div class="container has-text-centered">
