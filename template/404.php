@@ -3,7 +3,7 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <h1 class="title">Houston, we have a problem!</h1>
-            <div class="intro column">
+            <div class="intro column has-text-centered">
                 <br>
                 <p class="subtitle">Se ha producido un error en la página. Por favor vuelva a intentarlo.</p>
             </div>
