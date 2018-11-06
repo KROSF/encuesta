@@ -26,7 +26,7 @@ $title = "Selección de Encuesta";include "../template/head.php" ?>
                             <div class="control has-text-centered">
                                 <div class="select">
                                     <select id="profesor" name="profesor">
-                                        <?php foreach ($prof as $p) {print("<option>" . $p[0] . "</option>\n");} ?>
+                                        <?php foreach ($prof as $p) {print("<option value='$p[0]'>$p[1]</option>\n");} ?>
                                     </select>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@ $title = "Selección de Encuesta";include "../template/head.php" ?>
                             <div class="control has-text-centered">
                                 <div class="select">
                                     <select id="asignatura" name="asignatura">
-                                        <?php foreach ($asig as $a) {print("<option>" . $a[0] . "</option>\n");} ?>
+                                        <?php foreach ($asig as $a) {print("<option value='$a[0]'>$a[1]</option>\n");} ?>
                                     </select>
                                 </div>
                             </div>
@@ -62,13 +62,6 @@ $title = "Selección de Encuesta";include "../template/head.php" ?>
                                     </div>
                                 </div>
                             </div>
-                            <?php if (isset($_GET['error'])): ?>
-                                <div class="control has-text-centered">
-                                    <div class="notification is-danger has-text-grey-dark">
-                                        <p><?php print($_GET['error']) ?></p>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
                             <input type="submit" value="Siguiente" class="button is-link" name="encuesta" />
                     </form>
                     <?php endif; ?>
@@ -81,7 +74,27 @@ $title = "Selección de Encuesta";include "../template/head.php" ?>
 <?php
 if (isset($_POST['atras'])) {
     session_destroy();
-    header("location:estudio.php");
+    header("location:../index.php");
 } elseif (isset($_POST['consultar'])) {
-
+    try {
+        $query = "SELECT * FROM IMPARTE WHERE id_profesor= :prof AND id_asignatura :asig)";
+        $resultado = $conexion->prepare($query);
+        $prof = $_POST['profesor'];
+        $asig = $_POST['asignatura'];
+        $resultado->bindValue(":prof", $prof);
+        $resultado->bindValue(":asig", $asig);
+        $resultado->execute();
+        if ($resultado->rowCount() != 0) {
+            $_SESSION['profesor'] = $prof;
+            $_SESSION['asignatura'] = $asig;
+            header("location:estadisticas.php");
+        } else {
+            header("location:estudio.php?error=El profesor elegido no imparte la asignatura");
+        }
+    } catch (Exception $e) {
+        exit("Error: " . $e->getMessage());
+    }
+} elseif (isset($_POST['encuesta'])) {
+    $_SESSION['encuesta'] = $_POST['ciudad'];
+    header("location:estudio.php");
 }

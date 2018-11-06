@@ -1,9 +1,6 @@
 <?php
 session_start();
-if (isset($_POST['ciudad'])) {
-    $_SESSION['encuesta'] = $_POST['ciudad'];
-}
-if (isset($_SESSION['encuesta'])) {
+if (isset($_SESSION['encuesta']) && isset($_SESSION['profesor']) && isset($_SESSION['asignatura'])) {
     $db = include "../config/db.php";
     $queries = include "./filtros.php";
     require "./funciones.php";
@@ -15,7 +12,7 @@ if (isset($_SESSION['encuesta'])) {
     if (isset($_POST['filtro'])) {
         $post = comprobarPOST();
         if (!empty($post[0]) && !empty($post[1])) {
-            $respuestas = respuestas(getQueryArray($conexion, filtrosQuery($post, $queries['general']), array(array())));
+            $respuestas = respuestas(getQueryArray($conexion, filtrosQuery($post, $queries['estadistica']), array(array(":prof", ":asig", ":tipoen"), array($_SESSION['profesor'], $_SESSION['asignatura'], $_SESSION['encuesta']))));
         } else {
             $respuestas = respuestas(getQueryArray($conexion, $queries['sinfiltro'], array(array())));
         }
